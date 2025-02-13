@@ -1,0 +1,66 @@
+To create a dashboard, we first need multiple worksheets (charts) showing relevant visualizations.
+Worksheet 1: Sales by Region
+1.Drag Region to Columns.
+2.Drag Sales to Rows.
+3.Change the Marks type to Bar for better readability.
+4.Add Labels:
+1.Drag Sales to Label in the Marks pane.
+5.Rename the sheet to "Sales by Region".
+
+
+Worksheet 2: Profit by Sub-Category
+1.Drag Sub-Category to Columns.
+2.Drag Profit to Rows.
+3.Sort the bars:
+1.Right-click on Sub-Category in the Columns and select Sort Descending.
+4.Add Color to show positive and negative profit:
+1.Drag Profit to the Color shelf in Marks.
+5.Adjust the Color Palette:
+1.Negative values: Red.
+2.Positive values: Green.
+6.Rename the sheet to "Profit by Sub-Category".
+
+
+Worksheet 3: Sales and Profit Map
+1.Drag State to the Canvas. Tableau will generate a Map automatically.
+2.Drag Sales to Size on the Marks card.
+3.Drag Profit to Color on the Marks card.
+1.Adjust the color palette to show profits in green and losses in red.
+4.Add tooltips:
+1.Drag Sales and Profit to Tooltip.
+5.Rename the sheet to "Sales and Profit Map".
+
+Worksheet 4: Sales Trend over Time
+1.Drag Order Date to Columns.
+1.Right-click on Order Date and select Month.
+2.Drag Sales to Rows.
+3.Change the Marks type to Line.
+4.Add Region to Color to show trends by region.
+5.Rename the sheet to "Sales Trend".
+
+Create the Dashboard
+1.Go to the bottom of Tableau and click the "New Dashboard" icon.
+2.Drag the four sheets (Sales by Region, Profit by Sub-Category, Sales and Profit Map, and Sales Trend) into the dashboard layout.
+3.Adjust Layout:
+1.Arrange the visualizations to make the dashboard look clean and meaningful.
+4.Add Filters:
+1.For interactive elements, drag Region or Category as filters from one of the worksheets.
+5.Add Titles:
+1.Double-click on the dashboard title to name it "Superstore Sales Dashboard".
+6.Add Legends (if missing):
+1.Ensure that legends for color or size are visible.
+
+
+Create Storytelling in Tableau
+Go to the bottom of Tableau and click the "New Story" icon.
+Tableau will open a blank story canvas.
+Create Story Points:
+1.Drag the Dashboard or individual sheets to the story canvas.
+2.Add titles or captions for each story point to explain the insights.
+Example Story Flow:
+1.Point 1: Start with Sales by Region → Caption: "Sales distribution across regions highlights performance."
+2.Point 2: Move to Profit by Sub-Category → Caption: "Sub-categories with losses need special attention."
+3.Point 3: Show Sales and Profit Map → Caption: "Geographic insights reveal profitable and loss-making states."
+4.Point 4: End with Sales Trend over Time → Caption: "Monthly sales trends reveal seasonality and growth."
+Add descriptive captions to tell the story clearly.Save the Story as 
+"Superstore Sales Insights".
