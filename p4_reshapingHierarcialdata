@@ -1,0 +1,80 @@
+Step 1: Open Power BI go to Get data and click more
+
+Step 2: Search python and click connect
+
+Step 3: Python script dialogue box will open type your python code here (Make sure you have python 
+installed in your system)
+
+Step 4 code:
+
+
+import pandas as pd
+import numpy as np
+
+# Create a MultiIndex DataFrame (Hierarchical Data)
+arrays = [
+    ['A', 'A', 'A', 'B', 'B', 'B'],
+    ['X', 'Y', 'Z', 'X', 'Y', 'Z']
+]
+index = pd.MultiIndex.from_arrays(arrays, names=('Letter', 'Symbol'))
+
+data = pd.DataFrame({
+    'Value1': [10, 20, 30, 40, 50, 60],
+    'Value2': [15, 25, 35, 45, 55, 65]  # Removed misplaced '15'
+}, index=index)
+
+print("Original DataFrame (Hierarchical Data):")
+print(data)
+print("\n")
+
+# Stack Operation
+stacked = data.stack()
+print("Stacked DataFrame:")
+print(stacked)
+print("\n")
+
+# Unstack Operation
+unstacked = stacked.unstack()
+print("Unstacked DataFrame:")
+print(unstacked)
+print("\n")
+
+# Pivoting Data
+data_for_pivot = pd.DataFrame({
+    'Date': ['2024-01-01', '2024-01-01', '2024-01-02', '2024-01-02'],
+    'City': ['New York', 'Los Angeles', 'New York', 'Los Angeles'],
+    'Temperature': [32, 75, 30, 77]
+})
+
+print("Original Data for Pivoting:")
+print(data_for_pivot)
+print("\n")
+
+# Pivot the DataFrame
+pivoted_data = data_for_pivot.pivot(index='Date', columns='City', values='Temperature')
+print("Pivoted DataFrame (Cities as Columns):")
+print(pivoted_data)
+print("\n")
+
+# Pivot Table Data
+data_for_pivot_table = pd.DataFrame({
+    'Date': ['2024-01-01', '2024-01-01', '2024-01-02', '2024-01-02'],
+    'City': ['New York', 'Los Angeles', 'New York', 'Los Angeles'],
+    'Temperature': [32, 75, 30, 77],
+    'Humidity': [80, 20, 85, 18]
+})
+
+print("Original Data for Pivot Table:")  # Removed misplaced '16'
+print(data_for_pivot_table)
+print("\n")
+
+# Pivot Table to calculate the average temperature and humidity per city and date
+pivot_table_data = data_for_pivot_table.pivot_table(
+    index='Date',
+    columns='City',
+    values=['Temperature', 'Humidity'],
+    aggfunc=np.mean
+)
+
+print("Pivot Table DataFrame (Average Temperature and Humidity):")
+print(pivot_table_data)
