@@ -1,0 +1,94 @@
+Step 1: Create Individual Sheets for the Dashboard
+Before creating the dashboard, you need several sheets that contain the visualizations:
+Visualization 1: Regional Sales Overview
+1.Drag Region to the Columns shelf and Sales to the Rows shelf.
+2.Add Profit to the Color section of the Marks Card.
+1.This will create a bar chart showing sales by region, with the color intensity indicating profit.
+3.Rename the sheet as Regional Sales.
+
+Visualization 2: Sales Trends by Month
+1.Drag Order Date to the Columns shelf and change it to Month.
+2.Drag Sales to the Rows shelf.
+1.This creates a line chart showing sales trends over time.
+3.Rename the sheet as Sales Trends.
+
+Visualization 3: Category-Wise Performance
+1.Drag Category to the Columns shelf and Sales to the Rows shelf.
+2.Drag Profit to the Label section in the Marks Card to display profit values on the chart.
+3.Rename the sheet as Category Performance.
+
+Visualization 4: Top 10 Customers by Sales
+1.Drag Customer Name to the Rows shelf and Sales to the Columns shelf.
+2.Sort the visualization in descending order by sales.
+3.Filter to show only the Top 10 customers:
+1.Right-click Customer Name, choose Filter, and go to the Top tab.
+2.Select By Field: Top 10 by Sales (Sum).
+4.Rename the sheet as Top Customers.
+
+Step 3: Create the Dashboard
+1.Click the New Dashboard icon at the bottom of Tableau.
+2.Set Dashboard Size:
+1.In the left-hand pane, select Device Preview.
+2.Click Edit Dashboard Size and choose Automatic (to make it responsive) or custom dimensions like:
+1.Desktop: 1200 x 800 pixels
+2.Tablet: 800 x 600 pixels
+3.Phone: 375 x 667 pixels
+                                        
+3.Add Sheets to the Dashboard:
+Drag the individual sheets (Regional Sales, Sales Trends, etc.) into the dashboard canvas.
+
+Resize and arrange them to fit your desired layout:
+oPlace Regional Sales and Category Performance side by side.
+oAdd Sales Trends as a full-width chart below.
+oPlace Top Customers in a smaller section at the bottom-right.
+
+
+Step 4: Add Interactivity
+1.Filters:
+1.Add a filter to control all visualizations:
+1.Drag Category or Region to the Filters shelf for one of the visualizations.
+2.Right-click the filter, choose Apply to Worksheets, and select All Using This Data Source.
+2.  Go to the Dashboard menu (from the top navigation bar).
+·  Select Actions... from the dropdown. This will open the Dashboard Actions dialog box.
+·  You'll see a list of existing actions (if any) or an empty space to add new actions.
+3. Add a Filter Action
+A Filter Action allows one visualization to act as a filter for others. Here’s how to add and configure it:
+Click Add Action > Filter...:
+1.A new dialog box titled Add Filter Action will appear.
+Name the Action:
+1.Enter a name like Filter by Region (descriptive names help you manage multiple actions).
+Source Sheets:
+1.Under Source Sheets, select the sheet that will act as the filter (e.g., Regional Sales).
+2.Check the box next to the dashboard's name and select Regional Sales in the list.
+3.Leave the Run action on option as Select (default).
+1.This means the filter will activate when the user clicks on a data point (e.g., a specific region) in the Regional Sales bar chart.
+Target Sheets:
+1.Under Target Sheets, select the sheets that should respond to the filter (e.g., Sales Trends, Category Performance, and Top Customers).
+2.Leave All Fields as the default setting
+Clearing the Selection:
+1.Set Clearing the selection will to Show all values.
+1.This ensures that when the user deselects a data point, all visualizations will return to their default state.
+Test the Action:
+1.Click OK to save the action and close the dialog box.
+2.Now, return to the dashboard and click on a region in the Regional Sales chart.
+1.The other charts will update dynamically, showing only the data for the selected region
+3.  Add a Highlight Action
+A Highlight Action emphasizes related data points across visualizations. Here’s how to add it:
+Click Add Action > Highlight...:
+1.A new dialog box titled Add Highlight Action will appear.
+Name the Action:
+1.Enter a name like Highlight Sales Trends by Region.
+Source Sheets:
+1.Under Source Sheets, select the sheet that will act as the highlighter (e.g., Regional Sales).
+2.Leave the Run action on option as Hover (default).
+1.This means the highlight will activate when the user hovers over a data point.
+Target Sheets:
+1.Under Target Sheets, select the sheets to be highlighted (e.g., Sales Trends, Category Performance, etc.).
+2.Use the Selected Fields option and choose relevant fields to highlight:
+1.For example, choose Region if you want the highlight to focus on regions.
+Test the Action:
+1.Click OK to save the action and close the dialog box.
+2.Return to the dashboard, hover over a region in the Regional Sales chart, and watch as related regions in other visualizations are highlighted.
+
+
+For smaller devices, stack charts vertically for better readability.
