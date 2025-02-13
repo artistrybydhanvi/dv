@@ -1,0 +1,48 @@
+Step 1: Build a Time-Series Trend Visualization
+To analyze the sales trend and prepare for forecasting:
+Create a Line Chart for Trend Analysis:
+1.Drag Order Date to the Columns shelf.
+2.By default, Tableau will group dates by Year. Change this to a Month granularity:
+1.Right-click Order Date in the Columns shelf, select Convert to Continuous.
+2.Then, click the dropdown and choose Month.
+3.Drag Sales to the Rows shelf.
+4.This creates a line chart of monthly sales over time.
+
+Add a Trend Line:
+1.Go to the Analytics pane (on the left).
+2.Drag Trend Line into the chart.
+3.Tableau will offer you multiple trend models (Linear, Exponential, Polynomial, etc.).
+4.Choose Linear to see how sales have trended over time.
+
+
+Step 2: Analyze the Trend Model
+Inspect the Trend Line:
+1.Hover over the trend line. Tableau provides key statistics, including:
+1.Equation of the line: Shows the slope (rate of change) and intercept.
+2.R-squared value: Indicates how well the trend line fits the data.
+3.Example: If R² is 0.85, 85% of the variation in sales can be explained by the trend line.
+Evaluate the Model:
+1.A strong R-squared (close to 1) means the trend line accurately represents your data.
+2.You can use this model to predict whether sales will continue to increase, decrease, or remain stable.
+
+         
+Step 3: Add Forecasting
+Enable Forecasting:
+1.Go to the Analytics pane and drag Forecast onto the chart.
+2.Tableau will automatically add a forecast line extending beyond your existing data.
+
+Customize the Forecast:
+1.Right-click the forecast line and choose Edit to open the Forecast Options:
+1.Forecast Length: Set the time period you want to forecast (e.g., 6 months, 1 year).
+2.Prediction Interval: Adjust confidence intervals (default is 95%, meaning there’s a 95% chance the actual value will fall within the shaded area).
+3.Forecast Model: Choose an automatic model or manually select one (e.g., Additive for seasonality, Multiplicative for trends with percentage growth).
+
+
+Step 4: Add Filters and Drill-Down Analysis
+1.
+Add Filters to Analyze Specific Segments:
+1.Drag Category to the Filters shelf to analyze sales trends for specific product categories (e.g., Furniture, Technology).
+2.Drag Region to the Filters shelf to view trends for a specific region.
+Use Tooltips for Additional Insights:
+1.Drag Profit onto the Tooltip card.
+2.Now, hovering over any point in the trend line will display sales and profit for that month.
