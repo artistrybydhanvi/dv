@@ -1,0 +1,29 @@
+Step1:Review the Data Structure
+Once the Orders sheet is loaded, review the dataset:
+Key fields:
+oState, City, Postal Code → Geographic fields for plotting locations.
+oLatitude and Longitude → Predefined geographic coordinates.
+oSales, Profit, Quantity → Metrics for visualization.
+Step2:Assign Geographic Roles
+1.In the Data Pane (left side of Tableau), locate the following columns:
+1.State
+2.City
+3.Postal Code
+2.Right-click on each field and check the Geographic Role:
+1.For State, set Geographic Role > State/Province.
+2.For City, set Geographic Role > City.
+3.For Postal Code, set Geographic Role > Zip Code/Postcode.
+4.Tableau automatically sets Latitude and Longitude as geographic fields.
+
+
+Step3:Build the Geospatial Feature Map
+Follow these steps to create the map:
+3.1 Create a Basic Map
+1.Drag Longitude to the Columns Shelf.
+2.Drag Latitude to the Rows Shelf.
+1.Tableau will display a map with data points.
+3.2 Add Details to the Map
+1.Drag the State field to the Detail Marks Card.
+1.This plots points for each state on the map.
+2.Drag City to the Detail Marks Card (optional):
+1.This will plot cities as individual data points for finer detail.
