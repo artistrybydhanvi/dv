@@ -1,0 +1,62 @@
+1. Load the Excel File into Power BI:
+1.Click on Home > Get Data > Excel.
+2.Select your Excel file (e.g., Sample - Superstore.xlsx).
+3.Choose the required tables like Orders or others.
+3.Verify Relationships:Go to Model View.Ensure relationships exist between tables (e.g., Orders and Date Table).
+3.Create a Report with Visuals
+1.Sales by Category:
+-Drag Category to the Axis field.
+-Drag Sales to the Values field.
+-Create a Bar Chart or Column Chart.
+ 2.Yearly Sales Trend:
+-Drag Order Date to the Axis field (ensure it's set to Year).
+-Drag Sales to the Values field.
+-Create a Line Chart.
+3.Top 5 States by Profit:
+-Add a Bar Chart:On the Report View, go to the Visualizations Pane and select Bar Chart.
+-Drag Fields into the Visual:
+Axis: Drag the State field to the Axis area.
+ Values: Drag the Profit field to the Values area.
+- Apply a Top N Filter:To show only the top 5 states by profit:
+Open the Filter Pane:On the right, you’ll see the Filters Pane.
+1.Add a Filter for States:
+1.Under Filters on this Visual, find the State field.
+2.Click on the dropdown for State and select Top N.
+2.Configure Top N:
+1.In the Filter Type, choose Top N.
+2.Enter 5 to display the top 5 states.
+3.Drag the Profit field into the By Value area.
+3.Apply the Filter:
+1.Click Apply Filter.
+2.The visual will now display only the top 5 states by profit.
+                       4.Sort the Visual:
+To ensure the states are sorted by profit, click the More Options menu (three dots) in the visual.
+Select Sort by > Profit.
+Choose Descending to list the states from highest to lowest profit.
+
+4. Pin Visuals to a Dashboard
+-Publish the Report to Power BI Service:
+1.Save your Power BI Desktop file.
+2.Click on Publish (you’ll need a Power BI account).
+-Create a Dashboard and Pin Visuals:
+1.In Power BI Service, open the published report.
+2.Hover over any visual and click the Pin Icon (📌).
+3.Choose New Dashboard or pin it to an existing one.
+4.Name the dashboard (e.g., "Sales Analysis Dashboard").
+
+
+-Perform Operations on Pinned Visuals
+1.Resize Visuals:
+1.In the dashboard, drag the corners of visuals to resize them.
+
+2.Change Tile Settings:
+1.Click the ellipsis (...) on a visual > Edit Details.
+2.Update the title, subtitle, or hyperlink for the visual.
+
+3.Add Comments:
+1.Click the ellipsis (...) > Add a Comment.
+2.Collaborate with team members by tagging them (e.g., @John).
+
+4.Pin Live Pages:
+1.Instead of pinning individual visuals, you can pin an entire page:
+1.Click Pin Live Page at the top of the report.
