@@ -1,0 +1,50 @@
+Dax expressions 
+1.Import the Data into Power BI
+
+2. Create a Date Table
+-Go to the Modeling tab and select New Table.
+-Create a Date table with this formula:
+DateTable = CALENDAR(MIN(Orders[Order Date]), MAX(Orders[Order Date]))
+2.Add a Year column to the Date table:
+Year = YEAR(DateTable[Date])
+
+3. Establish Relationships. 
+-Click on "Manage Relationships":In the ribbon at the top, under the Modeling tab, look for the Manage Relationships button (it's on the far left in your screenshot).
+-In the Manage Relationships window:A dialog box will appear showing all the relationships currently set up in your model (if any).Click on New to create a new relationship.
+-Create the Relationship:In the "Create Relationship" window, you'll select the two tables and the columns you want to link.
+oOrders Table → Select the "Order Date" column.
+oDate Table → Select the "Date" column.
+Set the Cardinality to Many-to-One (because many orders can occur on the same date).
+Set Cross Filter Direction to Single.
+-Save the Relationship: Click OK to establish the relationship.
+-Verify in Model View:Switch to the Model View (click on the icon that looks like tables with lines connecting them, in the left-hand pane).You'll see a line connecting the Orders Table and the Date Table.
+
+4. Create a Measure for Total Sales
+1.Go to the Modeling tab and select New Measure.
+2.Add this DAX formula to calculate Total Sales:
+Total Sales = SUM(Orders[Sales])
+5. Create a Measure for YoY Growth
+1.Create another measure for Year-over-Year growth
+YoY Growth (%) = DIVIDE( [Total Sales] - CALCULATE([Total Sales], SAMEPERIODLASTYEAR(DateTable[Date])), CALCULATE([Total Sales], SAMEPERIODLASTYEAR(DateTable[Date]))) * 100
+6. Build the Visualizations
+1.Yearly Sales Bar Chart:
+
+-Go to the Report view.
+-Add a Clustered Column Chart visual.
+-Drag Year (from the DateTable) to the X-Axis.
+-Drag Total Sales to the Y-Axis.
+-Format the chart title as "Yearly Total Sales."
+2.YoY Growth Line Chart:
+-Add a Line Chart visual.
+-Drag Year (from the DateTable) to the X-Axis.
+-Drag YoY Growth (%) to the Y-Axis.
+-Format the chart title as "Year-over-Year Growth."
+3.Combined Dual-Axis Chart (Optional):
+-Use a Line and Stacked Column Chart:
+-Add Year to the X-Axis.
+-Add Total Sales to the Column Values.
+-Add YoY Growth (%) to the Line Values.
+7. Add Filters and Slicers
+1.Drag Region, Segment, or Category to the Filters pane.
+2.Add slicers for interactivity:
+-Insert a slicer visual and drag Region or Year into it.
