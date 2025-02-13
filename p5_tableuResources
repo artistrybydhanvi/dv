@@ -1,0 +1,84 @@
+Step 1: Connecting to the Dataset
+1.Open Tableau Public:
+1.Launch the Tableau Public application.
+2.Connect to the Data File:
+1.On the left-hand side of the Tableau start screen, click Microsoft Excel.
+2.Navigate to the location of the Sample - Superstore.xlsx file and select it.
+3.Tableau will load the file and show the sheets within the workbook (e.g., Orders, People, Returns).
+3 .Drag a Table to the Workspace:
+1.Drag the Orders sheet to the workspace area to load the data.
+2.Tableau will display a preview of the data, including columns like Order Date, Region, Sales, Profit, etc.
+
+4. Go to the Worksheet:
+1.Click on Sheet 1 at the bottom to start creating visualizations.
+
+
+Step 2: Perform Calculations
+Example 1: Calculate Profit Ratio
+We will create a new field that calculates the ratio of profit to sales.
+1.In the Data Pane (left side), click the dropdown arrow and select Create Calculated Field.
+2.Name the field Profit Ratio.
+3.Enter the formula:
+[Profit] / [Sales]
+4. Click OK to save.
+
+5.  Use this field in your visualization:
+Drag Profit Ratio to the Columns shelf.
+Drag Region to the Rows shelf to see the profit ratio for each region.
+
+Example 2: Categorize Sales Performance
+We’ll categorize sales based on thresholds.
+1.Create another calculated field and name it Sales Performance.
+2.Enter the formula:
+IF [Sales] > 5000 THEN 'High'
+ELSEIF [Sales] > 2000 THEN 'Medium'
+ELSE 'Low'
+END
+
+3. Click OK.
+4.  Drag Sales Performance to the Color section of the Marks Card to visualize sales categories.
+
+
+Step 3: Create Parameters
+Example 1: Set a Sales Threshold
+We’ll create a parameter to filter data dynamically based on a user-defined sales threshold.
+1.Create a Parameter:
+1.In the Data Pane, click the dropdown arrow and select Create Parameter.
+2.Name the parameter Sales Threshold.
+3.Set the Data Type to Float.
+4.Under Allowable Values, choose Range and set:
+1.Minimum: 0
+2.Maximum: 10,000
+3.Step Size: 500
+                          
+2.Show the Parameter Control:
+1.Right-click on the parameter and select Show Parameter Control.
+2.A slider will appear in your worksheet for the threshold.
+
+3.Use the Parameter in a Calculation:
+1.Create a new calculated field called Above Threshold with this formula:
+IF [Sales] > [Sales Threshold] THEN 'Above Threshold'
+ELSE 'Below Threshold'
+END
+·  Drag Above Threshold to the Color section of the Marks Card.
+·  Adjust the slider to see how the visualization changes based on the threshold.
+
+
+
+Example 2: Dynamic Region Selection
+Allow users to filter data based on a specific region.
+1.Create a Parameter:
+1.Name it Select Region.
+2.Set the Data Type to String.
+3.Under Allowable Values, select List and add the regions (e.g., "East", "West", "South", "Central").
+                 
+2.Show the Parameter Control:
+1.Right-click on the parameter and select Show Parameter Control.
+2.A dropdown will appear in your worksheet.
+3.Use the Parameter in a Filter:
+1.Create a calculated field called Region Filter:
+[Region] = [Select Region]
+2.Drag Region Filter to the Filters shelf and set it to True.
+                   
+
+4.Select a region from the dropdown to filter the data.
